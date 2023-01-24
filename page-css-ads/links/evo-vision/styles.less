@@ -29,7 +29,40 @@ body{
 
 /* === Element's images === */
 
+.bg-white {
+  background-color: #ffffff;
+}
+.bg-green {
+  background-color: #10a8ba;
+}
+.logo-white{
+  background-image: url("./images/logo-white.svg");
+}
+.logo-dark{
+  background-image: url("./images/logo-dark.svg");
+}
+.copy{
+  background-image: url("./images/copy.svg");
+}
+.cta{
+  background-image: url("./images/cta.svg");
+}
+.prod-shadow{
+  background-image: url("./images/shadow.png");
+}
+.prod-glow{
+  background-image: url("./images/prod-glow.png");
+}
+.prod-lens{
+  background-image: url("./images/prod-lens.png");
+}
+.bg-image-article{
+  background-image: url("./images/image.jpg");
+} 
+.image-mask{
+  -webkit-mask-image:url("./images/img-mask.svg");
 
+} 
 
 
 
@@ -43,17 +76,264 @@ body{
 
 
 /*== full scene elements==*/
+.copy, .bg-green, .bg-white-bar, .shadow{
+  display:none;
+}
+.bg-image-article {
+  opacity:1;
+}
 
+.image-mask {
+  width:300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-position:center; 
+}
+ .prod-container{
+  transform-origin: left bottom;
+  position: absolute;
+  background-repeat: no-repeat;
+  opacity:1;
+  width: 220px;
+  height: 147px;
+  left: 50%;
+  bottom: 50%;
+  transform: scale(3.2) translate(-50%, 50%);
+    .vertical &{
+      transform-origin: center;
+      transform: scale(1.2) translate(-42%, 38%);
+  }
+}
+ .prod-lens{
+  opacity:1;
+  width: 100%;
+  height: 100%;
+}
+.prod-glow {
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: sprite .8s steps(35) infinite;
+}
+
+.logo-dark{
+ 
+    display:block;
+    width:20%;
+    height:10%;
+    left:40%;
+    top:3%;
+  
+  .vertical &{
+    display:block;
+    width:50%;
+    height:10%;
+    left:25%;
+    top:7%;
+  }
+}
+.logo-white{
+    display:none;
+}
+.cta{
+
+    display:block;
+    width:20%;
+    height:10%;
+    left:40%;
+    bottom:3%;
+  .vertical &{
+    display:block;
+    width:50%;
+    height:10%;
+    left:25%;
+    bottom:7%;
+  }
+}
 
 
 /*===animation===*/
 
+.bg-image-article {
+     animation: fadeOut .5s 2.8s both;
+}
+.image-mask{
+  animation: prodMaskAnim 5s ease-out both;
+  .vertical &{
+    animation: prodMaskAnimMob 5s ease-out both;
+  }
+}
+ .prod-container{
+    animation: fadeIn 1s ease 2.5s both;
+ }
+.logo-dark{
+  transform: translateY(-200%);
+  opacity:0;
+  .active &{
+  transform: translateY(0%);
+  opacity:1;
+  transition: 1s ease-out 2s;
+  }
+}
+.logo-white{
+  transform: scale(0);
+  opacity:0;
+  .active &{
+  transform: scale(1);
+  opacity:1;
+  transition: 2s ease-out 1s ;
+  }
+}
+.cta{
+  transform: translateY(200%);
+  opacity:0;
+  .active &{
+  transform: translateY(0%);
+  opacity:1;
+  transition: 1s ease-out 2s;
+  }
+}
 
+
+#full-container {
+  opacity: 0;
+  .active & {
+    opacity: 1;
+  }
+}
+
+.block{
+  .exiting &, .exited &{
+    opacity:0;
+  }
+}
 
 
 /*===Keyframes animation==*/
 
+@keyframes prodMaskAnim{
+  0%{
+    opacity:1;
+    -webkit-mask-size:300% 300%;
+    
+  }
+  60%{
+    opacity:1;
+    -webkit-mask-size:135% 135%;
+  }
 
+  100%{
+    opacity:0;
+    -webkit-mask-size:135% 135%;
+  }
+}
+@keyframes prodMaskAnimMob{
+  0%{
+    opacity:1;
+    -webkit-mask-size:250% 250%;
+    
+  }
+  60%{
+    opacity:1;
+    -webkit-mask-size:135% 135%;
+  }
+
+  100%{
+    opacity:0;
+    -webkit-mask-size:135% 135%;
+  }
+}
+@keyframes prodLensAnim{
+  0%{
+    opacity:0;
+    transform:scale(100%);
+    
+  }
+  20%{
+    opacity:0;
+   transform:scale(100%);
+    
+  }
+  90%{
+    opacity:1;
+    transform:scale(50%);
+  }
+  100%{
+    opacity:1;
+    transform:scale(50%);
+  }
+}
+@keyframes fadeIn{
+  0%{
+    opacity:0;
+    
+  }
+  100%{
+    opacity:1;
+  }
+}
+@keyframes fadeOut{
+  0%{
+    opacity:1;
+    
+  }
+  100%{
+    opacity:0;
+  }
+}
+
+
+
+
+@keyframes float{
+  from{
+    transform:translateY(0) scale(0.7);
+    
+  }
+  to{
+    transform:translateY(-10%) scale(0.7);
+
+  }
+}
+@keyframes floatMob{
+  from{
+    transform:translateY(0) scale(0.5);
+    
+  }
+  to{
+    transform:translateY(-10%) scale(0.5);
+
+  }
+}
+@keyframes resize{
+  from{
+    transform:scale(1);
+    opacity:1;
+  }
+  to{
+    transform:scale(0.7);
+    opacity:.5;
+
+  }
+}
+@keyframes resizeMob{
+  from{
+    transform:scale(.7);
+    opacity:1;
+  }
+  to{
+    transform:scale(.5);
+    opacity:.5;
+
+  }
+}
+@keyframes sprite{
+  100% { background-position: -7700px; }
+}
     
   
  

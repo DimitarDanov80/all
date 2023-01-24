@@ -1,15 +1,19 @@
 window.setTimeout(function(){
-    document.body.classList.add('step-1')
-  },500);
+    document.body.classList.add('active')
+  },0);
 
-  window.setTimeout(function(){
-    document.body.classList.add('step-2')
-  },3000);
-
-  window.setTimeout(function(){
-      document.body.classList.add('step-3')
-  },5000)
-  window.setTimeout(function(){
-      document.body.classList.add('step-4')
-  },8000)
-
+  function myFunction(mediaQuery){
+    if(mediaQuery.matches){
+      document.body.classList.add('vertical')
+      document.body.classList.remove('horizontal')
+      }
+    else{
+      document.body.classList.add('horizontal')
+      document.body.classList.remove('vertical')
+  
+    }
+  }
+  
+  const mediaQuery = window.matchMedia('(max-width:600px)');
+  myFunction(mediaQuery)
+  mediaQuery.addEventListener('change', myFunction)
