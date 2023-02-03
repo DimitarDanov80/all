@@ -56,6 +56,9 @@
     height: 100%;
     position: absolute; 
    } 
+   .button{
+    cursor:pointer;
+   }
   #button-1{
     background-image: url("../images/ad-1.jpg");
     background-size: cover;
@@ -135,6 +138,7 @@
       left:0%;
       top:0%;
       position: absolute;
+      cursor: pointer;
 
    }
    .btn-replay.opacityOne {
