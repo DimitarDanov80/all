@@ -11,6 +11,7 @@
   .container{
     width : 100%;
     height: 105vw;
+    
     margin: auto;
     position: relative; 
   }  
@@ -23,6 +24,7 @@
     margin: auto;
   }
   .container{
+    border: solid 2px red ;
     width : 60%;
     height: 37vw;
     margin: auto;
@@ -31,7 +33,6 @@
 } 
  
   iframe{
-    border: none ;
     width : 100%;
     height: 100%;
     position: absolute; 
@@ -55,7 +56,7 @@
   #button-3{
     background-image: url("../links/evo-vision/images/logo-dark.svg"), radial-gradient(rgba(255, 255, 255, 1), rgb(214, 214, 214));
    }
-  #button-3{
+  #button-4{
     background-image: url("../links/Easter/images/logo.svg"), radial-gradient(rgb(255, 0, 0), rgb(216, 0, 0));
    }
 
